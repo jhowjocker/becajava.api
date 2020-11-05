@@ -35,6 +35,7 @@ public class CasaDeShowController {
 		public ResponseEntity listar() {
 			Iterable<CasaDeShow> casadeshow = _service.listar();
 		return ResponseEntity.status(HttpStatus.OK).body(casadeshow);
+		
 		}
 }
 		

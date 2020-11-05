@@ -11,7 +11,6 @@ public class CasaDeShow {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    private String banda;
     
 	public Long getId() {
 		return id;
@@ -24,11 +23,5 @@ public class CasaDeShow {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-	public String getBanda() {
-		return banda;
-	}
-	public void setBanda(String banda) {
-		this.banda = banda;
 	}
 }
