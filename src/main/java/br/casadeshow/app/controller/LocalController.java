@@ -19,21 +19,21 @@ import br.casadeshow.app.model.*;
 import br.casadeshow.app.servicel.*;
 
 @RestController
-@RequestMapping("/Musicos")
-public class MusicoController {
+@RequestMapping("/localizacao")
+public class LocalController {
 	
-		public MusicoService _service;
+		public LocalService _service;
 		
 		@Autowired
-		public MusicoController(MusicoService service) {
+		public LocalController(LocalService service) {
 			_service = service;
 		}
 
 		@PostMapping
-		public ResponseEntity inserir(@RequestBody Musico musico) {
+		public ResponseEntity inserir(@RequestBody Local localizacao) {
 			try {
-			_service.inserir(musico);
-			return ResponseEntity.status(HttpStatus.CREATED).body("Musico Inserido com sucesso!");
+			_service.inserir(localizacao);
+			return ResponseEntity.status(HttpStatus.CREATED).body("Localização Inserida com sucesso!");
 			}catch(Exception e) {
 				return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Erro na aplicação!");
 		}
@@ -42,8 +42,8 @@ public class MusicoController {
 		@GetMapping
 		public ResponseEntity listar() {
 			try {
-			Iterable<Musico> musico= _service.listar();
-		return ResponseEntity.status(HttpStatus.OK).body(musico);
+			Iterable<Local> localizacao= _service.listar();
+		return ResponseEntity.status(HttpStatus.OK).body(localizacao);
 			}catch(Exception e) {
 				return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Erro na aplicação!");
 		}
@@ -52,7 +52,7 @@ public class MusicoController {
 		 @GetMapping(path = "/{id}") 
 		 public ResponseEntity obter(@PathVariable Long id) {
 			 try {
-			 Optional<Musico> banda = _service.obter(id);
+			 Optional<Local> banda = _service.obter(id);
 			 return ResponseEntity.status(HttpStatus.OK).body(banda);
 			 }catch(Exception e) {
 					return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Erro na aplicação!");
@@ -61,9 +61,9 @@ public class MusicoController {
 		 
 		    
 		 @PutMapping(path = "/{id}") 
-		 public ResponseEntity atualizar(@RequestBody Musico musico, @PathVariable Long id) {
+		 public ResponseEntity atualizar(@RequestBody Local local, @PathVariable Long id) {
 			 try {
-			 _service.atualizar(musico, id);
+			 _service.atualizar(local, id);
 			 return ResponseEntity.status(HttpStatus.OK).body("Banda atualizada com sucesso!");
 			 }catch(Exception e) {
 					return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Erro na aplicação!");

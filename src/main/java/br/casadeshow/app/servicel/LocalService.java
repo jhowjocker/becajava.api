@@ -11,32 +11,32 @@ import br.casadeshow.app.model.*;
 
 @Service
 
-public class CasaDeShowService {
+public class LocalService {
 
-	final CasaDeShowRepository _repository;
-
+	final LocalRepository _repository;
+	
 	@Autowired
-	public CasaDeShowService(CasaDeShowRepository repository) {
+	public LocalService(LocalRepository repository) {
 		_repository = repository;
-
+		
 	}
-
-	public void inserir(CasaShow casaDeShow) {
-		casaDeShow.setId(0L);
-		_repository.save(casaDeShow);
+	
+	public void inserir(Local local) {
+		local.setId(0L);
+		_repository.save(local);
 	}
-
-	public List<CasaShow> listar() {
+	
+	public List<Local> listar(){
 		return _repository.findAll();
 	}
 	
-	public Optional<CasaShow> obter(Long id){
+	public Optional<Local> obter(Long id){
 		return _repository.findById(id);
 	}
 	
-	public void atualizar(CasaShow casaShow,Long id) {
-		casaShow.setId(id);
-		_repository.save(casaShow);
+	public void atualizar(Local local,Long id) {
+		local.setId(id);
+		_repository.save(local);
 	}
 	
 	public void deletar(Long id) {

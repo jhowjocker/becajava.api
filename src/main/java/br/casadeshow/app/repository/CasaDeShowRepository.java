@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import br.casadeshow.app.model.*;
 
 @Repository
-public interface CasaDeShowRepository extends JpaRepository<CasaDeShow,Long> {
+public interface CasaDeShowRepository extends JpaRepository<CasaShow,Long> {
 
 }

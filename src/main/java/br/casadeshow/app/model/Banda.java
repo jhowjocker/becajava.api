@@ -4,8 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 
 @Entity
 public class Banda {
@@ -14,21 +12,9 @@ public class Banda {
 	private Long id;
 	private String nome;
 	private String estilo;
-	@ManyToOne
-	@JoinColumn(name = "CasaDeShowId")
-	
-	private CasaDeShow casaDeShow;
 
 	public Long getId() {
 		return id;
-	}
-
-	public CasaDeShow getCasaDeShow() {
-		return casaDeShow;
-	}
-
-	public void setCasaDeShow(CasaDeShow casaDeShow) {
-		this.casaDeShow = casaDeShow;
 	}
 
 	public void setId(Long id) {

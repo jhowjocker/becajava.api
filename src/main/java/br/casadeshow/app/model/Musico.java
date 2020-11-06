@@ -14,10 +14,19 @@ public class Musico {
 	private Long id;
 	private String nome;
 	private String instrumento;
+	private String nascionalidade;
+
 	@ManyToOne
 	@JoinColumn(name = "BandaId")
-	
 	private Banda banda;
+
+	public String getNascionalidade() {
+		return nascionalidade;
+	}
+
+	public void setNascionalidade(String nascionalidade) {
+		this.nascionalidade = nascionalidade;
+	}
 
 	public Banda getBanda() {
 		return banda;

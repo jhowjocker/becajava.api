@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import br.casadeshow.app.model.*;
 
 @Repository
-public interface PromocoesRepository extends JpaRepository<Promocoes,Long> {
+public interface LocalRepository extends JpaRepository<Local,Long> {
 
 }

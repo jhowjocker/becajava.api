@@ -1,6 +1,7 @@
 package br.casadeshow.app.servicel;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,5 +28,18 @@ public class MusicoService {
 	
 	public List<Musico> listar(){
 		return _repository.findAll();
+	}
+	
+	public Optional<Musico> obter(Long id){
+		return _repository.findById(id);
+	}
+	
+	public void atualizar(Musico musico,Long id) {
+		musico.setId(id);
+		_repository.save(musico);
+	}
+	
+	public void deletar(Long id) {
+		_repository.deleteById(id);
 	}
 }

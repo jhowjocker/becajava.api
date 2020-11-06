@@ -1,6 +1,7 @@
 package br.casadeshow.app.servicel;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,4 +29,28 @@ public class BandaService {
 	public List<Banda> listar(){
 		return _repository.findAll();
 	}
+	
+	public Optional<Banda> obter(Long id){
+		return _repository.findById(id);
+	}
+	
+	public void atualizar(Banda banda,Long id) {
+		banda.setId(id);
+		_repository.save(banda);
+	}
+	
+	public void deletar(Long id) {
+		_repository.deleteById(id);
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+
