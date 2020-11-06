@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.casadeshow.app.model.*;
-import br.casadeshow.app.servicel.*;
+import br.casadeshow.app.service.*;
 
 @RestController
 @RequestMapping("/Musicos")

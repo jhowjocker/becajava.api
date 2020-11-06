@@ -1,4 +1,4 @@
-package br.casadeshow.app.servicel;
+package br.casadeshow.app.service;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,4 +1,4 @@
-package br.casadeshow.app.servicel;
+package br.casadeshow.app.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,32 +11,32 @@ import br.casadeshow.app.model.*;
 
 @Service
 
-public class MusicoService {
+public class LocalService {
 
-	final MusicoRepository _repository;
+	final LocalRepository _repository;
 	
 	@Autowired
-	public MusicoService(MusicoRepository repository) {
+	public LocalService(LocalRepository repository) {
 		_repository = repository;
 		
 	}
 	
-	public void inserir(Musico musico) {
-		musico.setId(0L);
-		_repository.save(musico);
+	public void inserir(Local local) {
+		local.setId(0L);
+		_repository.save(local);
 	}
 	
-	public List<Musico> listar(){
+	public List<Local> listar(){
 		return _repository.findAll();
 	}
 	
-	public Optional<Musico> obter(Long id){
+	public Optional<Local> obter(Long id){
 		return _repository.findById(id);
 	}
 	
-	public void atualizar(Musico musico,Long id) {
-		musico.setId(id);
-		_repository.save(musico);
+	public void atualizar(Local local,Long id) {
+		local.setId(id);
+		_repository.save(local);
 	}
 	
 	public void deletar(Long id) {

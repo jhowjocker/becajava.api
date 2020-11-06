@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.casadeshow.app.model.Banda;
-import br.casadeshow.app.servicel.BandaService;
+import br.casadeshow.app.service.BandaService;
 
 @RestController
 @RequestMapping("/bandas")

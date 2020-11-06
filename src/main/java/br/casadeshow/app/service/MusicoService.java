@@ -1,4 +1,4 @@
-package br.casadeshow.app.servicel;
+package br.casadeshow.app.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,32 +11,32 @@ import br.casadeshow.app.model.*;
 
 @Service
 
-public class EventoService {
+public class MusicoService {
 
-	final EventoRepository _repository;
+	final MusicoRepository _repository;
 	
 	@Autowired
-	public EventoService(EventoRepository repository) {
+	public MusicoService(MusicoRepository repository) {
 		_repository = repository;
 		
 	}
 	
-	public void inserir(Evento evento) {
-		evento.setId(0L);
-		_repository.save (evento);
+	public void inserir(Musico musico) {
+		musico.setId(0L);
+		_repository.save(musico);
 	}
 	
-	public List<Evento> listar(){
+	public List<Musico> listar(){
 		return _repository.findAll();
 	}
 	
-	public Optional<Evento> obter(Long id){
+	public Optional<Musico> obter(Long id){
 		return _repository.findById(id);
 	}
 	
-	public void atualizar(Evento evento,Long id) {
-		evento.setId(id);
-		_repository.save(evento);
+	public void atualizar(Musico musico,Long id) {
+		musico.setId(id);
+		_repository.save(musico);
 	}
 	
 	public void deletar(Long id) {

@@ -1,4 +1,4 @@
-package br.casadeshow.app.servicel;
+package br.casadeshow.app.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,35 +11,46 @@ import br.casadeshow.app.model.*;
 
 @Service
 
-public class LocalService {
+public class BandaService {
 
-	final LocalRepository _repository;
+	final BandaRepository _repository;
 	
 	@Autowired
-	public LocalService(LocalRepository repository) {
+	public BandaService(BandaRepository repository) {
 		_repository = repository;
 		
 	}
 	
-	public void inserir(Local local) {
-		local.setId(0L);
-		_repository.save(local);
+	public void inserir(Banda banda) {
+		banda.setId(0L);
+		_repository.save(banda);
 	}
 	
-	public List<Local> listar(){
+	public List<Banda> listar(){
 		return _repository.findAll();
 	}
 	
-	public Optional<Local> obter(Long id){
+	public Optional<Banda> obter(Long id){
 		return _repository.findById(id);
 	}
 	
-	public void atualizar(Local local,Long id) {
-		local.setId(id);
-		_repository.save(local);
+	public void atualizar(Banda banda,Long id) {
+		banda.setId(id);
+		_repository.save(banda);
 	}
 	
 	public void deletar(Long id) {
 		_repository.deleteById(id);
 	}
+	
 }
+
+
+
+
+
+
+
+
+
+
